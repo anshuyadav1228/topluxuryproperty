@@ -87,8 +87,9 @@ function Listproperty() {
                         }}
                         spaceBetween={20}
                         breakpoints={{
-                            0: { slidesPerView: 1 },
-                            768: { slidesPerView: 3 },
+                            0: { slidesPerView: 1.2 },
+                            768: { slidesPerView: 2 },
+                             992: { slidesPerView: 3 }
                         }}
                     >
                         {propertyList.map((item) => (
@@ -102,9 +103,17 @@ function Listproperty() {
                                     </div>
 
                                     <div className="pr-content">
-                                        <h3>{item.title}</h3>
+                                       <h3>
+  {item.title.length > 20
+    ? item.title.substring(0, 20) + "..."
+    : item.title}
+</h3>
                                         <span>{item.price}</span>
-                                        <p>{item.desc}</p>
+                                        <p>
+                                            {item.desc.length > 50
+                                                ? item.desc.substring(0, 50) + "..."
+                                                : item.desc}
+                                            </p>
 
                                         <div className="list-a">
                                             <ul>

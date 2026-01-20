@@ -51,13 +51,13 @@ function Brandedproperty() {
     return (
         <>
             <section className="Brandedproperty">
-                  <img src="img/18132521.jpg" alt="" className='branded-ventor'/>
+                <img src="img/18132521.jpg" alt="" className='branded-ventor' />
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4 Branded-h">
                             <h2>Branded <span>Residences</span></h2>
                             <p>Highlight the best of your properties by using the List Category shortcode. You can list specific properties categories, types, cities, areas.</p>
-                            <a className='v-properties-btn' >View All properties <IoIosArrowForward/></a>
+                            <a className='v-properties-btn' >View All properties <IoIosArrowForward /></a>
                         </div>
                         <div className="col-md-8">
                             <div className="slider-wrapper slider--branded">
@@ -80,7 +80,7 @@ function Brandedproperty() {
                                     }}
                                     spaceBetween={20}
                                     breakpoints={{
-                                        0: { slidesPerView: 1 },
+                                        0: { slidesPerView: 1.2 },
                                         768: { slidesPerView: 2 },
                                     }}
                                 >
@@ -95,9 +95,17 @@ function Brandedproperty() {
                                                 </div>
 
                                                 <div className="pr-content">
-                                                    <h3>{item.title}</h3>
+                                                    <h3>
+                                                        {item.title.length > 20
+                                                            ? item.title.substring(0, 20) + "..."
+                                                            : item.title}
+                                                    </h3>
                                                     <span>{item.price}</span>
-                                                    <p>{item.desc}</p>
+                                                    <p>
+                                                        {item.desc.length > 50
+                                                            ? item.desc.substring(0, 50) + "..."
+                                                            : item.desc}
+                                                    </p>
 
                                                     <div className="list-a">
                                                         <ul>
