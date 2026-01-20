@@ -767,6 +767,11 @@ location-filter {
 .close {
   display: none;
 }
+.nav-content {
+    li a{
+        color: white;
+    }
+}
 
 @media (max-width: 1400px) {
   .Branded-h h2 {
